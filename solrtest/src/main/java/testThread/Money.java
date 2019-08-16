@@ -1,13 +1,14 @@
 package testThread;
 
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Money {
     //private volatile AtomicInteger money=new AtomicInteger(100);
 
-    private volatile int money;
+    //private volatile int money;
+    private ThreadLocal<Double> money = new ThreadLocal<Double>();
 
     private static Money Money;
 
@@ -18,9 +19,9 @@ public class Money {
     private Money() {
     }
 
-    private Money(int money) {
+    /*private Money(int money) {
         this.money = money;
-    }
+    }*/
 
     public static Money getMoney(){
         synchronized ("1"){
@@ -39,10 +40,14 @@ public class Money {
             lock.unlock();
         }*/
 
-        return Math.random();
+        /*return Math.random();*/
+        if (money.get()==null){
+            money.set( Math.random());
+        }
+        return money.get();
     }
 
-    public void setMoney(int money) {
+    /*public void setMoney(int money) {
         this.money = money;
-    }
+    }*/
 }

@@ -53,7 +53,6 @@ public class SearchServiceImpl implements SearchService {
             resultMap.putAll(brandAndSpecMap);
         }else{
             Map brandAndSpecMap = searchBrandAndSpecList((String) searchMap.get("category"));
-        
             resultMap.putAll(brandAndSpecMap);
         }
 

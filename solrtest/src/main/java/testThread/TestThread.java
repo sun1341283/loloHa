@@ -1,5 +1,7 @@
 package testThread;
 
+import org.junit.Test;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -24,10 +26,14 @@ public class TestThread {
 
         System.out.println(Thread.currentThread().getName()+"运行");
 
+    }
 
-
-
-
+    @Test
+    public void threadLocaltest(){
+        ThreadLocal<String> stringThreadLocal = new ThreadLocal<String>();
+        System.out.println(stringThreadLocal.get());
 
     }
+
+
 }

@@ -19,7 +19,7 @@ import com.youlexuan.entity.Result;
 @RequestMapping("/contentCategory")
 public class ContentCategoryController {
 
-	@Reference
+	@Reference(loadbalance = "random")
 	private ContentCategoryService contentCategoryService;
 	
 	/**

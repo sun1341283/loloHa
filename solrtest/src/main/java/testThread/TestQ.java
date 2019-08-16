@@ -22,6 +22,8 @@ public class TestQ {
             System.out.println(i);
 
             System.out.println("版本更新");
+
+            System.out.println("二次更新");
         }
 
     }

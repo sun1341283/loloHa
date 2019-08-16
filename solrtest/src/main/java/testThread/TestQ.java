@@ -20,6 +20,8 @@ public class TestQ {
             test("d");
             i++;
             System.out.println(i);
+
+            System.out.println("版本更新");
         }
 
     }
